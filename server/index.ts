@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { connectDB } from './config/db.js';
 import profileRoutes from './src/routes/profile.routes.js';
+import aboutRoutes from './src/routes/about.routes.js';
 
 dotenv.config();
 
@@ -14,6 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/profile', profileRoutes);
+app.use('/api/about', aboutRoutes);
 
 // Connect Database
 connectDB();
